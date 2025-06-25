@@ -1,8 +1,0 @@
-.venv
-tests
-.pre-commit-config.yaml
-.env
-.gitignore
-Dockerfile
-Makefile
-README.md
