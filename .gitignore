@@ -79,5 +79,9 @@ fabric.properties
 
 .idea/*
 
+# all .env files in all folders and subfolders
+**/.env
+
+
 !.idea/codeStyles
 !.idea/runConfigurations
