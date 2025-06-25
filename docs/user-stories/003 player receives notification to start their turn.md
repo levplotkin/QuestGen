@@ -1,4 +1,4 @@
-As a player, when it becomes my turn in the game session, 
+As a player, when it becomes my turn in the game session,
 I want to receive a clear notification and, upon continuing, see a concise reminder of the story so far and a description of my current situation, so that I am oriented and ready to take my action.
 
 Acceptance Criteria:

@@ -1,5 +1,5 @@
 As a player, when it is not my turn or I am not taking an action,
-I want to continuously see the game’s progress in a side panel 
+I want to continuously see the game’s progress in a side panel
 
 Acceptance Criteria:
 

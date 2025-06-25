@@ -1,5 +1,5 @@
-As a player, after I join a game session, if I already have a character, 
-I want to see a concise reminder of the ongoing story and a clear description of my current situation, so I can immediately understand the context before taking any actions. 
+As a player, after I join a game session, if I already have a character,
+I want to see a concise reminder of the ongoing story and a clear description of my current situation, so I can immediately understand the context before taking any actions.
 If it’s my first time in the session and I don’t have a character, I should be redirected to the character creation process before proceeding.
 
 Acceptance Criteria:

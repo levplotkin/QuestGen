@@ -1,4 +1,4 @@
-As a player, I want to create a new game session by either selecting from a list of predefined stories or requesting a new story based on my own description, 
+As a player, I want to create a new game session by either selecting from a list of predefined stories or requesting a new story based on my own description,
 so that I can quickly start a D&D adventure that matches my interests and preferences.
 
 Acceptance Criteria:

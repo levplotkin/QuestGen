@@ -1,5 +1,5 @@
-As a player, when the game session ends, 
-I want to receive a clear summary of the adventure’s conclusion, see any rewards or experience earned, and have the opportunity to reflect on the story and my character’s achievements, 
+As a player, when the game session ends,
+I want to receive a clear summary of the adventure’s conclusion, see any rewards or experience earned, and have the opportunity to reflect on the story and my character’s achievements,
 so that I have a sense of closure and accomplishment at the end of the session.
 
 Acceptance Criteria:
