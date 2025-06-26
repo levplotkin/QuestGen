@@ -28,12 +28,48 @@ def create_session(game_template: str, user_prompt: str = ""):
         return None
 
 
+def player_page(session_id: str):
+    """Display the player page with chat and game history."""
+    st.title(f"Game Session: {session_id[:8]}...")
+
+    # Two-column layout
+    col1, col2 = st.columns([2, 1])
+
+    # Left panel - Chat with game
+    with col1:
+        st.header("Game Chat")
+        st.chat_input("Type your message here...")
+        # Placeholder for chat messages
+        st.write("Chat messages will appear here")
+
+    # Right panel - Game history
+    with col2:
+        st.header("Game History")
+        st.write("Game history will appear here")
+
+
 def main():
     """
     Main function to run the Streamlit UI.
     """
     st.set_page_config(page_title="Game Lobby", layout="wide")
 
+    # Initialize session state for page navigation
+    if "current_page" not in st.session_state:
+        st.session_state.current_page = "lobby"
+    if "current_session" not in st.session_state:
+        st.session_state.current_session = None
+
+    # Show appropriate page based on state
+    if st.session_state.current_page == "player" and st.session_state.current_session:
+        player_page(st.session_state.current_session)
+        if st.button("Back to Lobby"):
+            st.session_state.current_page = "lobby"
+            st.session_state.current_session = None
+            st.rerun()
+        return
+
+    # Show lobby page by default
     st.title("Game Sessions Lobby")
 
     # --- Create New Session Form ---
@@ -106,7 +142,9 @@ def main():
             cols[0].text(f"Actions for {session_id[:8]}...")
 
             if cols[1].button("Join", key=f"join_{session_id}"):
-                st.toast(f"Joining session {session_id[:8]}...")
+                st.session_state.current_page = "player"
+                st.session_state.current_session = session_id
+                st.rerun()
 
             if cols[2].button("Details", key=f"details_{session_id}"):
                 st.toast(f"Showing details for {session_id[:8]}...")
