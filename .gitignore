@@ -77,7 +77,8 @@ fabric.properties
 # Ignore everything but code style settings and run configurations
 # that are supposed to be shared within teams.
 
-.idea/*
+**/.idea
+
 
 # all .env files in all folders and subfolders
 **/.env
@@ -85,3 +86,4 @@ fabric.properties
 
 !.idea/codeStyles
 !.idea/runConfigurations
+/game-session-service/.idea/
