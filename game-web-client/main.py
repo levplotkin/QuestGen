@@ -1,8 +1,10 @@
+import os
+
 import pandas as pd
 import requests
 import streamlit as st
 
-BACKEND_URL = "http://127.0.0.1:8000"
+BACKEND_URL = os.environ.get("BACKEND_URL", "http://127.0.0.1:8000")
 
 
 def get_sessions():
