@@ -3,8 +3,11 @@ import os
 import pandas as pd
 import requests
 import streamlit as st
+from dotenv import load_dotenv
 
-BACKEND_URL = os.environ.get("BACKEND_URL", "http://127.0.0.1:8000")
+load_dotenv()
+
+BACKEND_URL = os.environ.get("BACKEND_URL")
 
 
 def get_sessions():
