@@ -1,9 +1,17 @@
+import os
 import uuid
 from typing import Any, Dict, List
 
 import uvicorn
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+
+load_dotenv()
+
+
+PORT = int(os.getenv("PORT"))
+
 
 app = FastAPI()
 
@@ -64,4 +72,4 @@ game_sessions[initial_session_id] = {
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=PORT, reload=True)
