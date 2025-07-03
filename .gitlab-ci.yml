@@ -1,0 +1,73 @@
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  PYTHON_VERSION: "3.12"
+
+# Test stage
+test:game-session-service:
+  stage: test
+  image: python:${PYTHON_VERSION}
+  before_script:
+    - cd game-session-service
+    - pip install uv
+    - uv sync
+  script:
+    - uv run pytest
+  only:
+    changes:
+      - game-session-service/**/*
+
+test:game-web-client:
+  stage: test
+  image: python:${PYTHON_VERSION}
+  before_script:
+    - cd game-web-client
+    - pip install uv
+    - uv sync
+  script:
+    - uv run pytest
+  only:
+    changes:
+      - game-web-client/**/*
+
+# Lint and format check
+lint:
+  stage: test
+  image: python:${PYTHON_VERSION}
+  before_script:
+    - pip install pre-commit
+  script:
+    - pre-commit run --all-files
+  allow_failure: true
+
+# Build stage (placeholder for future containerization)
+build:
+  stage: build
+  script:
+    - echo "Build stage - placeholder for Docker builds"
+  only:
+    - main
+    - develop
+
+# Deploy stage (placeholder)
+deploy:staging:
+  stage: deploy
+  script:
+    - echo "Deploy to staging environment"
+  environment:
+    name: staging
+  only:
+    - develop
+
+deploy:production:
+  stage: deploy
+  script:
+    - echo "Deploy to production environment"
+  environment:
+    name: production
+  only:
+    - main
+  when: manual
